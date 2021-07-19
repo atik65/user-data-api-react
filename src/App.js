@@ -28,13 +28,21 @@ function App() {
       setUsers(users);
       setLoading(false);
     } catch (error) {
-      console.log("Error");
+      console.log(` sorry  ${error.message}`);
       setLoading(false);
     }
   };
 
   const refresh = () => {
     fetchData();
+  };
+
+  const remove = (id) => {
+    const filteredUsers = users.filter((user) => {
+      return user.id !== id;
+    });
+
+    setUsers(filteredUsers);
   };
 
   // return  logics
@@ -47,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Users users={users} />
+      <Users users={users} remove={remove} />
     </>
   );
 }
