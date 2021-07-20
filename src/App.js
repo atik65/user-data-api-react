@@ -28,7 +28,7 @@ function App() {
       setUsers(users);
       setLoading(false);
     } catch (error) {
-      console.log(` sorry  ${error.message}`);
+      console.log(` error in fetching users data array...}`);
       setLoading(false);
     }
   };
